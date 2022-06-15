@@ -3,11 +3,11 @@
 
 import cv2
 
-from app.video import myVideo
+from app.video import video
 
 _f = 0  # frame counter
 
-cap = cv2.VideoCapture(f"{myVideo.path_o}{myVideo.name}.{myVideo.format}")  # Open video
+cap = cv2.VideoCapture(f"{video.path_o}{video.name}.{video.format}")  # Open video
 fps, frames = cap.get(cv2.CAP_PROP_FPS), cap.get(cv2.CAP_PROP_FRAME_COUNT)
 
 # Aspect ratio of original video
@@ -21,7 +21,7 @@ x, y = int(w_frame / 2), int(h_frame / 2)  # Center of new cropped video
 # output
 fourcc = cv2.VideoWriter_fourcc(*"XVID")
 out = cv2.VideoWriter(
-    f"{myVideo.path_c}c_{myVideo.name}.{myVideo.format}", fourcc, fps, (new_height, new_width)
+    f"{video.path_c}c_{video.name}.{video.format}", fourcc, fps, (new_height, new_width)
 )
 
 while cap.isOpened():
@@ -32,12 +32,12 @@ while cap.isOpened():
     if ret:
         crop_frame = frame[y : y + h_frame, x : x + new_width]
 
-        if myVideo.PROGRESS:
+        if video.show_progress:
             print(f"{int(_f * 100 / frames)} %")  # frames cropped
 
         out.write(crop_frame)  # Save video
 
-        if myVideo.DISPLAY:
+        if video.show_video:
             cv2.imshow("frame", frame)
             cv2.imshow("cropped", crop_frame)
 
@@ -48,8 +48,3 @@ while cap.isOpened():
 
 cap.release()
 out.release()
-
-
-git remote add origin https://github.com/SamuelSHernandez/test.git
-git branch -M main
-git push -u origin main
