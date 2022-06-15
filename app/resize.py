@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import cv2
-
 from video import video
 
 _F = 0  # frame counter

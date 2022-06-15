@@ -5,6 +5,8 @@
 Video
 
 """
+
+
 class Video:
     """
     Video class
@@ -20,5 +22,6 @@ class Video:
 
     def get_aspect_ratio(x, y):
         pass
+
 
 video = Video()
