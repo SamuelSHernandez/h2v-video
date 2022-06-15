@@ -3,7 +3,7 @@
 
 import cv2
 
-from video import myVideo
+from app.video import myVideo
 
 _f = 0  # frame counter
 
