@@ -15,7 +15,7 @@ h_frame = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 new_width, new_height = 520, 1080  # for vertical video
 
-x, y = int(w_frame / 2), int(h_frame / 2)  # Center of new cropped video
+x, y = int(w_frame/2), int(h_frame/2)  # Center of new cropped video
 
 # output
 fourcc = cv2.VideoWriter_fourcc(*"XVID")
