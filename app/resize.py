@@ -15,6 +15,7 @@ from cv2 import (
 from video import video
 
 _F = 0  # frame counter
+show_video = True
 
 cap = VideoCapture(f"{video.path_o}{video.name}.{video.format}")  # Open video
 fps, frames = cap.get(CAP_PROP_FPS), cap.get(CAP_PROP_FRAME_COUNT)
@@ -46,7 +47,7 @@ while cap.isOpened():
 
         out.write(crop_frame)  # Save video
 
-        if video.show_video:
+        if show_video:
             imshow("frame", frame)
             imshow("cropped", crop_frame)
 

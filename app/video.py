@@ -16,7 +16,6 @@ class Video:
     def __init__(self):
         self.width = 520
         self.height = 1080
-        self.show_video = True
         self.show_progress = False
         self.name = "clip"
         self.format = "mov"
