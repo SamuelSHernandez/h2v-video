@@ -13,7 +13,7 @@ fps, frames = cap.get(cv2.CAP_PROP_FPS), cap.get(cv2.CAP_PROP_FRAME_COUNT)
 w_frame = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 h_frame = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
-new_width,new_height  = 520, 1080  # for vertical video
+new_width, new_height = 520, 1080  # for vertical video
 
 x, y = int(w_frame / 2), int(h_frame / 2)  # Center of new cropped video
 
