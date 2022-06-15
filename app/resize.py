@@ -3,9 +3,9 @@
 
 import cv2
 
-from app.video import video
+from video import video
 
-_f = 0  # frame counter
+_F = 0  # frame counter
 
 cap = cv2.VideoCapture(f"{video.path_o}{video.name}.{video.format}")  # Open video
 fps, frames = cap.get(cv2.CAP_PROP_FPS), cap.get(cv2.CAP_PROP_FRAME_COUNT)
@@ -26,14 +26,14 @@ out = cv2.VideoWriter(
 
 while cap.isOpened():
     ret, frame = cap.read()
-    _f += 1  # Counting frames
+    _F += 1  # Counting frames
 
     # Avoid problems when video finish
     if ret:
         crop_frame = frame[y : y + h_frame, x : x + new_width]
 
         if video.show_progress:
-            print(f"{int(_f * 100 / frames)} %")  # frames cropped
+            print(f"{int(_F * 100 / frames)} %")  # frames cropped
 
         out.write(crop_frame)  # Save video
 
