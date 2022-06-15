@@ -24,11 +24,19 @@ class Video:
         self.path_c = "media/cropped/"
 
     def get_aspect_ratio(self):
+        """
+        get_aspect_ratio
+        """
+
         return (self.width, self.height)
 
-    def set_aspect_ratio(self, w, h):
-        self.width = w
-        self.height = h
+    def set_aspect_ratio(self, width, height):
+        """
+        set_aspect_ratio
+        """
+
+        self.width = width
+        self.height = height
 
 
 video = Video()
